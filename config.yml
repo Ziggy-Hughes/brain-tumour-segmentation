@@ -1,0 +1,34 @@
+
+folder_name:
+      data_folder_name: 'data'
+
+file_name:
+      csv_file_name: 'bbox_coordinate.csv'
+      # bfc_active: 'BfcData'
+      bfc_active: 'NoBfcData'
+
+output_folder_name:
+      data_folder_name: 'ProcessedData'
+
+full_model_name: 'U-Net_full_Segmentation_Model_20240203_22-00-22.pth'
+ws_model_name: 'U-Net_bb_Segmentation_Model_20240204_13-29-52.pth'
+kmeans_model_name: 'U-Net_kmeans_Segmentation_Model_20240204_16-26-24.pth'
+threshold_model_name: 'U-Net_threshold_Segmentation_Model_20240205_13-49-06.pth'
+
+param_setting:
+      train_device: 'GPU'
+      seg_model_type: 'U-Net'
+      test_set_percentage: 0.1
+      training_iteration: 12
+      optimizer_type: 'Adam'   # can choose 'SGD' or 'Adam'
+      learning_rate: 0.001 # was 0.0005
+      SGD_momentum: 0.9
+      valid_interval: 6 # 5, make sure valid_interval is smaller than training_iteration
+      remove_slice_num: 40
+      batch_size: 200 # was 50
+
+save_model_criterion:
+      train_ACC_criterion: 0.1
+      valid_ACC_criterion: 0.1
+      train_F1_criterion: 0.1
+      valid_F1_criterion: 0.1
